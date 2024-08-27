@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(20, 20, 20);
+        }
+
+        .list {
+            color: white;
+            width: 15vw;
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+        }
+
+        .list-element {
+            margin-top: 10px;
+            display: flex;
+            background-color: rgb(73, 73, 73);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 75%;
+            height: 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .title {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas width="1000px" height="600px" id="canvas"></canvas>
+    </div>  
+    
+    <div class="list">
+        <div class="list-element"><p>Simple Constrain</p></div>
+        <div class="list-element"><p>Chain Of Constrains</p></div>
+    </div>
+    
+    <div class="title">Simple Constrain</div>
+
+    <script type="module" src="./src/index.js"></script>
+</body>
+</html>
