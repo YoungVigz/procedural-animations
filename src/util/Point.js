@@ -5,7 +5,7 @@ export default class Point {
         this.size = size
     }
 
-    draw(ctx, fillStatus, vizualizer) {
+    draw(ctx, fillStatus) {
         ctx.fillStyle = "#000000"
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI, false)      

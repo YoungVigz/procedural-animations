@@ -2,6 +2,9 @@ export default class SceneManager {
     constructor(scene, sceneList) {
         this.scene = scene
         this.sceneList = sceneList
+
+        const sceneTitle = findSceneNameByObject(scene, sceneList)
+        document.querySelector(".title").innerHTML = sceneTitle
     }
 
     changeScene(sceneTitle) {
@@ -15,4 +18,13 @@ export default class SceneManager {
     playScene() {
         this.scene.draw()
     }
+}
+
+function findSceneNameByObject(sceneObject, scenes) {
+    for (const [name, scene] of Object.entries(scenes)) {
+        if (scene === sceneObject) {
+            return name; 
+        }
+    }
+    return null;
 }

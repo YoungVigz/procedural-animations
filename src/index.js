@@ -7,15 +7,17 @@ import ChainOfConstrainsScene from "./scene/ChainOfConstrainsScene.js"
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
 
-const scenes = document.querySelectorAll(".list-element")
+const scenesList = document.querySelectorAll(".list-element")
 const sceneTitleDiv = document.querySelector(".title")
 
-const sm = new SceneManager(new ChainOfConstrainsScene(ctx), {
+const scenes = {
     "Simple Constrain": new SimpleConstrainScene(ctx),
     "Chain Of Constrains": new ChainOfConstrainsScene(ctx)
-})
+}
 
-scenes.forEach(scene => {
+const sm = new SceneManager(scenes["Chain Of Constrains"], scenes)
+
+scenesList.forEach(scene => {
     scene.onclick = () => {
         let sceneTitle = scene.innerText
 
