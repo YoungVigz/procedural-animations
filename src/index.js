@@ -3,6 +3,7 @@ import { WIDTH, HEIGHT, FPS } from "./config.js"
 import SceneManager from "./scene/SceneManager.js"
 import SimpleConstrainScene from "./scene/SimpleConstrainScene.js"
 import ChainOfConstrainsScene from "./scene/ChainOfConstrainsScene.js"
+import WormScene from "./scene/WormScene.js"
 
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
@@ -12,10 +13,11 @@ const sceneTitleDiv = document.querySelector(".title")
 
 const scenes = {
     "Simple Constrain": new SimpleConstrainScene(ctx),
-    "Chain Of Constrains": new ChainOfConstrainsScene(ctx)
+    "Chain Of Constrains": new ChainOfConstrainsScene(ctx),
+    "Worm": new WormScene(ctx)
 }
 
-const sm = new SceneManager(scenes["Chain Of Constrains"], scenes)
+const sm = new SceneManager(scenes["Worm"], scenes)
 
 scenesList.forEach(scene => {
     scene.onclick = () => {
